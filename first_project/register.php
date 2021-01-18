@@ -9,13 +9,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
-<!--    <header class="container text-center">-->
-<!--        <h1 class="mt-5">Registration Form</h1>-->
-<!--    </header>-->
-
     <div class="container">
         <div class="row mt-5">
             <div class="col-6">
@@ -51,29 +48,34 @@
                     <!-- Modal body -->
                     <div class="modal-body">
                         <div class="att-form">
-                            <div class="mb-3 form-group">
-                                <label for="first_name" class="form-label">First name</label>
-                                <input type="text" class="form-control" id="first_name" name="first_name">
-                            </div>
-                            <div class="form-group">
-                                <label for="last_name" class="form-label">Last Name</label>
-                                <input type="text" class="form-control" id="last_name" name="last_name">
-                            </div>
-                            <div class="mb-3 form-group">
-                                <label for="contact_number" id="name" class="form-label">Contact Number</label>
-                                <input type="text" class="form-control" id="contact_number" name="contact_number">
-                            </div>
-                            <div class="mb-3 form-group">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" name="email">
-                            </div>
-                            <div class="mb-3 form-group">
-                                <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password" name="password">
-                            </div>
+                            <p id="alert"></p>
+                            <form id="register-form">
+                                <div class="mb-3 form-group">
+                                    <label for="first_name" class="form-label">First name</label>
+                                    <input type="text" class="form-control" id="first_name" name="first_name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="last_name" class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" id="last_name" name="last_name">
+                                </div>
+                                <div class="mb-3 form-group">
+                                    <label for="contact_number" id="name" class="form-label">Contact Number</label>
+                                    <input type="text" class="form-control" id="contact_number" name="contact_number">
+                                </div>
+                                <div class="mb-3 form-group">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email">
+                                </div>
+                                <div class="mb-3 form-group">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="password" name="password">
+                                </div>
+                            </form>
+
                             <div class="mb-3 form-group">
                                 <label for="confirm_password" class="form-label">Confirm Password</label>
                                 <input type="password" class="form-control" id="confirm_password" name="confirm_password">
+                                <div class="registrationFormAlert" style="color:green;" id="CheckPasswordMatch">
                             </div>
                         </div>
                     </div>

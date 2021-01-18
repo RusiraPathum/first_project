@@ -27,11 +27,17 @@ function check(){
     var password = document.getElementById('password').value;
     var confirm_password = document.getElementById('confirm_password').value;
 
-    if (password == confirm_password){
-        alert('Password')
-    }else {
-        alert('Password Not Match')
+    function checkPasswordMatch() {
+        var password = $("#password").val();
+        var confirmPassword = $("#confirm_password").val();
+        if (password != confirmPassword)
+            $("#CheckPasswordMatch").html("Passwords does not match!");
+        else
+            $("#CheckPasswordMatch").html("Passwords match.");
     }
+    $(document).ready(function () {
+        $("#txtConfirmPassword").keyup(checkPasswordMatch);
+    });
 
     var id = "insert";
     var dt ={
@@ -43,7 +49,7 @@ function check(){
         password: password,
         confirm_password: confirm_password
     }
-    alert(JSON.stringify(dt));
+    // alert(JSON.stringify(dt));
 
     if (first_name!= "" && last_name!= "" && contact_number!= "" && email!= "", password!="", confirm_password!=""){
         $.ajax({
@@ -51,13 +57,12 @@ function check(){
             method: 'POST',
             data: dt,
             success: function (msg) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Something went wrong!',
-                    footer: '<a href>Why do I have this issue?</a>'
-                })
-                window.location.reload();
+
+                swal({
+                    icon: "successful",
+                });
+
+
             },
             error : function(request,error)
             {
@@ -68,29 +73,34 @@ function check(){
         alert('Please Fill All The Field');
 }
 
-function delete_user(){
-    alert('hi')
+function delete_user(idUser){
+
     var conf = confirm("Are you sure");
     var id = "delete";
     if (conf == true){
         $.ajax({
             url: './php/backend.php',
             type: 'post',
-            data: {id:id},
+            data: {id:id, idUser: idUser},
             success:function (data,status){
-                alert("Successfully Delete !");
+                // alert(data);
+                $('#alert').html("<p>Delete Successfully!</p>");
                 window.location.reload();
             }
         })
     }
 }
 
-function getUserDetails(id){
-    $('#hidden_user_id').val(id);
+function getUserDetails(idUser){
+    $('#hidden_user_id').val(idUser);
+
+    var id = "update";
 
     $.ajax(
         "./php/backend.php")
 }
+
+
 
 $(document).ready(function (){
     $('#login').click(function() {

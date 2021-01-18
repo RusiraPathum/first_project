@@ -27,6 +27,7 @@
                     <span><i class="fa fa-tasks mr-2"></i></span>View All
                 </button>
             </div>
+            <p class="text-danger pt-2" id="alert"></p>
         </div>
 
         <div class="container">
@@ -48,7 +49,7 @@
                     <!-- Modal body -->
                     <div class="modal-body">
                         <div class="att-form">
-                            <p id="alert"></p>
+
                             <form id="register-form">
                                 <div class="mb-3 form-group">
                                     <label for="first_name" class="form-label">First name</label>
@@ -89,7 +90,7 @@
                 </div>
             </div>
         </div>
-
+        </div>
 
 <!--////////////////update/////////////-->
 
@@ -106,37 +107,44 @@
                     <!-- Modal body -->
                     <div class="modal-body">
                         <div class="att-form">
-                            <div class="mb-3 form-group">
-                                <label for="update_first_name" class="form-label">First name</label>
-                                <input type="text" class="form-control" id="update_first_name" name="first_name">
-                            </div>
-                            <div class="form-group">
-                                <label for="update_last_name" class="form-label">Last Name</label>
-                                <input type="text" class="form-control" id="update_last_name" name="last_name">
-                            </div>
-                            <div class="mb-3 form-group">
-                                <label for="update_contact_number" id="name" class="form-label">Contact Number</label>
-                                <input type="text" class="form-control" id="update_contact_number" name="contact_number">
-                            </div>
-                            <div class="mb-3 form-group">
-                                <label for="update_email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="update_email" name="email">
-                            </div>
-                            <div class="mb-3 form-group">
-                                <label for="update_password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="update_password" name="password">
-                            </div>
-                            <div class="mb-3 form-group">
-                                <label for="update_confirm_password" class="form-label">Confirm Password</label>
-                                <input type="password" class="form-control" id="update_confirm_password" name="confirm_password">
-                            </div>
+                            <form id="update_details">
+                                <div class="mb-3 form-group">
+
+                                    <input type="hidden" class="form-control" id="update_id" name="id" disabled>
+                                </div>
+                                <div class="mb-3 form-group">
+                                    <label for="update_first_name" class="form-label">First name</label>
+                                    <input type="text" class="form-control" id="update_first_name" name="first_name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="update_last_name" class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" id="update_last_name" name="last_name">
+                                </div>
+                                <div class="mb-3 form-group">
+                                    <label for="update_contact_number" id="name" class="form-label">Contact Number</label>
+                                    <input type="text" class="form-control" id="update_contact_number" name="contact_number">
+                                </div>
+                                <div class="mb-3 form-group">
+                                    <label for="update_email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="update_email" name="email">
+                                </div>
+                                <div class="mb-3 form-group">
+                                    <label for="update_password" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="update_password" name="password">
+                                </div>
+                                <div class="mb-3 form-group">
+                                    <label for="update_confirm_password" class="form-label">Confirm Password</label>
+                                    <input type="password" class="form-control" id="update_confirm_password" name="confirm_password">
+                                </div>
+                            </form>
+
                         </div>
                     </div>
 
                     <!-- Modal footer -->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                        <input  value="Update" onclick="update_user_details()" type="button" name="submit" class="btn btn-primary">
+                        <input  value="Update" id="updateUser" type="button" name="submit" class="btn btn-primary">
                         <input type="hidden" name="" id="hidden_user_id">
                     </div>
 
